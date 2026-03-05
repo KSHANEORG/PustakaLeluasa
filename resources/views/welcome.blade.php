@@ -38,7 +38,7 @@ body {
             }
 
             nav {
-                                font-size:30px;
+                                font-size:15px;
                               text-align:right;
                                line-height: 1;
             }
