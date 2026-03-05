@@ -2,7 +2,7 @@
     <x-filament::section>
         <h1 style=font-size:30px> Trending Books </h1>
         <?php
-        $books = DB::table('books')->get();
+        $books = DB::table('books')->orderByDesc('views')->get();
         ?>
         <div style=display:grid;grid-template-columns:repeat(5,1fr);>
         @foreach ($books as $book)

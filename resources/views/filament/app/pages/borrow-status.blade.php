@@ -1,3 +1,3 @@
 <x-filament-panels::page>
-    {{-- Page content --}}
+//thinfgs
 </x-filament-panels::page>

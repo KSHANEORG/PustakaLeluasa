@@ -1,3 +1,3 @@
 <x-filament-panels::page>
-    <h1>For You</h1>
+    <p>PIlih Kategori yang Anda suka</p>
 </x-filament-panels::page>
