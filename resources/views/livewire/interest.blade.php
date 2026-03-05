@@ -2,7 +2,7 @@
     <x-filament::section>
         <p>Apa yang kamu suka?</p>
                 <?php
-        $category = DB::table('category')->get();
+        $category = DB::table('categories')->get();
         ?>
         <div style=display:grid;grid-template-columns:repeat(5,1fr);>
         @foreach ($category as $cat)

@@ -32,7 +32,7 @@ class AppPanelProvider extends PanelProvider
             ->login(Login::class) // Enables Login
             ->registration(Register::class) // Enables Registration
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Red,
             ])
             ->discoverResources(in: app_path('Filament/App/Resources'), for: 'App\Filament\App\Resources')
             ->discoverPages(in: app_path('Filament/App/Pages'), for: 'App\Filament\App\Pages')
