@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*
+ {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+            .leftys
+            {
+                font-size: 100px;
+                text-align:left;
+                display: inline-block;
+                line-height: 0;
+            }
+
+            .Lnav
+            {
+
+                text-align:right;
+            }
+
+            nav {
+                                font-size:15px;
+                              text-align:right;
+                               line-height: 1;
+            }
+
+            a
+            {
+
+                color: #000000ff;
+                text-decoration: none;
+                  text-align:center;
+            }
+
+            .bookcase
+            {
+                align-items: center;
+                background-color: #FF8888;
+                padding:10px;
+                border-radius: 10px;
+                display: grid;
+                /* default to single column for small screens */
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            /* stack three columns on larger viewports */
+            @media (min-width: 640px) {
+                .bookcase {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+            }
+
+                        .bookcasex
+            {
+                align-items: center;
+                padding:10px;
+                border-radius: 10px;
+                display: grid;
+                /* default to single column for small screens */
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            /* stack three columns on larger viewports */
+            @media (min-width: 640px) {
+                .bookcasex {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .books
+            {
+                max-width: 50%;
+                height: auto;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .prev{
+                                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .header-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+            
+            .search {
+                width: 200px;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 16px;
+            }
+
+            .menu-section {
+                padding: 6rem 1.5rem;
+                background-color: #ffffff;
+                color: #000000;
+            }
+
+            .menu-header {
+                text-align:center;
+                margin-bottom: 4rem;
+            }
+
+            .menu-title {
+                font-size: 2.25rem;
+                margin-bottom: 1rem
+            }
+
+            @media (min-width: 768px) {
+  .menu-title {
+    font-size: 3rem;
+  }
+}
+
+            .menu-grid {
+                max-width: 72rem;
+                margin: 0 auto;
+                padding:0 1.5rem;
+                display:grid;
+                gap: 2.5rem;
+            }
+
+            @media (min-width: 768px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+            .menu-card {
+                background-color: #d6d6d6;
+                padding: 1rem;
+                border-radius: 0.75rem;
+                  box-shadow: 0 10px 15px -3px rgba(85, 85, 85, 0.1), 0 4px 6px -2px rgba(88, 88, 88, 0.05);
+                transition: transform 0.3s ease;
+                border: 1px solid #555; 
+            }
+
+            .menu-img {
+                width: 100%;
+                height:16rem;
+                object-fit:cover;
+                border-radius: 0.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .menu-item-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.menu-item-desc {
+  color: #6d6d6d;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.menu-item-price {
+  color: #bc6c25;
+  font-weight: bold;
+}

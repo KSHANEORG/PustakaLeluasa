@@ -8,112 +8,7 @@
 <meta property="og:url" content="https://store.kenzieshane.my.id/" />
 <meta property="og:image" content="https://www.kenzieshane.my.id/profile.jpg" />
     
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-*
- {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
-
-body {
-    background-color: #ffffff;
-    color: #000000;
-}
-            .leftys
-            {
-                font-size: 100px;
-                text-align:left;
-                display: inline-block;
-                line-height: 0;
-            }
-
-            .Lnav
-            {
-
-                text-align:right;
-            }
-
-            nav {
-                                font-size:15px;
-                              text-align:right;
-                               line-height: 1;
-            }
-
-            a
-            {
-
-                color: #000000ff;
-                text-decoration: none;
-                  text-align:center;
-            }
-
-            .bookcase
-            {
-                align-items: center;
-                background-color: #FF8888;
-                padding:10px;
-                border-radius: 10px;
-                display: grid;
-                /* default to single column for small screens */
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-            /* stack three columns on larger viewports */
-            @media (min-width: 640px) {
-                .bookcase {
-                    grid-template-columns: 1fr 1fr 1fr;
-                }
-            }
-
-                        .bookcasex
-            {
-                align-items: center;
-                padding:10px;
-                border-radius: 10px;
-                display: grid;
-                /* default to single column for small screens */
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-            /* stack three columns on larger viewports */
-            @media (min-width: 640px) {
-                .bookcasex {
-                    grid-template-columns: 1fr;
-                }
-            }
-
-            .books
-            {
-                max-width: 50%;
-                height: auto;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .prev{
-                                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            .header-container {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 20px;
-            }
-            
-            .search {
-                width: 200px;
-                padding: 8px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                font-size: 16px;
-            }
-    </style>
+<link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
@@ -157,13 +52,29 @@ href="{{ url('/app') }}"
                          <div class="bookcasex">
                <img class=prev src="Pasted image.png">
         </div>
-                <br>
+                 <section id="menu" class="menu-section">
 
-                 <div class="bookcase">
-                <a href=/app><img class=books src="{{asset('buku.png')}}"></a>
-                <a href=/app><img class=books src="{{asset('buku1.png')}}"></a>
-                <a href=/app><img class=books src="{{asset('buku2.png')}}"></a>
-                </div>
+                <div class="menu-grid">
+            <!-- Menu Item 1 -->
+            <div class="menu-card">
+                <img src="buku.png" alt="Tew Fu Fa" class="menu-img">
+                <h3 class="menu-item-title">Buku</h3>
+                <p class="menu-item-desc">Ini adalah sebuah buku.</p>
+                <span class="menu-item-price">18.000.000</span>
+            </div>
+            <div class="menu-card">
+                <img src="buku1.png" alt="Tew Fu Fa" class="menu-img">
+                <h3 class="menu-item-title">Buku</h3>
+                <p class="menu-item-desc">Ini adalah sebuah buku.</p>
+                <span class="menu-item-price">9.000.000</span>
+            </div>
+            <div class="menu-card">
+                <img src="buku2.png" alt="Tew Fu Fa" class="menu-img">
+                <h3 class="menu-item-title">Buku</h3>
+                <p class="menu-item-desc">Ini adalah sebuah buku.</p>
+                <span class="menu-item-price">9.000.000</span>
+            </div>
+        </div>
                 <br>
                 <br>
                 <p>TOKO GENERIK KS(c)2026</p>
