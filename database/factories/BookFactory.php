@@ -20,7 +20,9 @@ class BookFactory extends Factory
             'bookname' => fake()->sentence(3),
             'imageurl' => '/buku.png', // Default placeholder
             'specialbookid' => fake()->unique()->slug(),
+            'price' => fake()->numberBetween(100000, 300000),
             'views' => fake()->numberBetween(100, 10000),
+            'description' => fake()->paragraph(),
         ];
     }
 }

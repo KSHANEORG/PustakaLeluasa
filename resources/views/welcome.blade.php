@@ -46,9 +46,9 @@ href="{{ url('/app') }}"
                    <input class="search" id="search" type="text" value="Search"/>
                </div>
                 <br>
-                 <div class="bookcasex">
+                <a href=/app> <div class="bookcasex">
                 <img class=prev src="Screenshot from 2026-03-03 12-31-16.png">
-        </div>
+        </div></a>
                          <div class="bookcasex">
                <img class=prev src="Pasted image.png">
         </div>
@@ -56,23 +56,17 @@ href="{{ url('/app') }}"
 
                 <div class="menu-grid">
             <!-- Menu Item 1 -->
-            <div class="menu-card">
-                <img src="buku.png" alt="Tew Fu Fa" class="menu-img">
-                <h3 class="menu-item-title">Buku</h3>
-                <p class="menu-item-desc">Ini adalah sebuah buku.</p>
-                <span class="menu-item-price">18.000.000</span>
+            <?php $books = DB::table('books')->paginate(10); ?>
+            @foreach ($books as $book)
+                 <div class="menu-card">
+                <img src="{{ $book->imageurl }}" alt="{{ $book->bookname }}" class="menu-img">
+                <h3 class="menu-item-title">{{ $book->bookname }}</h3>
+                <p class="menu-item-desc">{{ $book->description }}</p>
+                <span class="menu-item-price">{{ 'Rp.'.' '.number_format($book->price) }}</span>
             </div>
-            <div class="menu-card">
-                <img src="buku1.png" alt="Tew Fu Fa" class="menu-img">
-                <h3 class="menu-item-title">Buku</h3>
-                <p class="menu-item-desc">Ini adalah sebuah buku.</p>
-                <span class="menu-item-price">9.000.000</span>
-            </div>
-            <div class="menu-card">
-                <img src="buku2.png" alt="Tew Fu Fa" class="menu-img">
-                <h3 class="menu-item-title">Buku</h3>
-                <p class="menu-item-desc">Ini adalah sebuah buku.</p>
-                <span class="menu-item-price">9.000.000</span>
+            @endforeach
+           
+           
             </div>
         </div>
                 <br>
