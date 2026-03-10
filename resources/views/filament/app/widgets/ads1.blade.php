@@ -20,7 +20,6 @@
                 display:block;
                 width:100%;
                 border: 2px solid #555;
-                background-color: #333333;
                 border-radius: 12px;
                 padding: 1rem;
                 align-items: center;
