@@ -1,3 +1,3 @@
 <x-filament-panels::page>
-    {{-- Page content --}}
+    <p style=font-size:130px;color:red>Rp. -100,00</p>
 </x-filament-panels::page>

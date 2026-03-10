@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class User extends Authenticatable implements FilamentUser
 {
@@ -68,5 +69,10 @@ class User extends Authenticatable implements FilamentUser
         }
 
         return true;
+    }
+
+    public function ownedBooks(): BelongsToMany
+    {
+        return $this->belongsToMany(Book::class)->withTimestamps();
     }
 }

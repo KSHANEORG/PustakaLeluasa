@@ -1,6 +1,7 @@
-<x-filament-panels::page>
-    <div style="max-width: 900px; margin: 0 auto; padding: 2rem;">
-<?php $books = auth()->user()->ownedBooks()->latest('book_user.created_at')->get(); ?>
+<div style="max-width: 900px; margin: 0 auto; padding: 2rem;">
+    <h1>Koleksi Saya</h1>
+
+    <p><a href="/app/dashboard">Dashboard</a></p>
 
     @if ($books->isEmpty())
         <p>Belum ada buku di koleksi kamu.</p>
@@ -9,12 +10,10 @@
             @foreach ($books as $book)
                 <li>
                     <a href="{{ route('z-bookdetails', ['specialbookid' => $book->specialbookid]) }}">
-                        - {{ $book->bookname }}
+                        {{ $book->bookname }}
                     </a>
                 </li>
             @endforeach
         </ul>
     @endif
 </div>
-
-</x-filament-panels::page>

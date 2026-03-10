@@ -18,7 +18,7 @@ class BookFactory extends Factory
     {
         return [
             'bookname' => fake()->sentence(3),
-            'imageurl' => '/buku.png', // Default placeholder
+            'imageurl' => '/buku'.fake()->numberBetween(1,3).'.png', // Default placeholder
             'specialbookid' => fake()->unique()->slug(),
             'price' => fake()->numberBetween(100000, 300000),
             'views' => fake()->numberBetween(100, 10000),
