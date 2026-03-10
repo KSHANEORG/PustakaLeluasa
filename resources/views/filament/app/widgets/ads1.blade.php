@@ -43,7 +43,7 @@
         @foreach ($books as $book)
             
         <div class=lope>
-             <a href="/{{ $book->specialbookid }}" ><img class=img-asdf src={{ $book->imageurl }}><p> {{ $book->bookname }}<br>{{ 'Rp '.number_format($book->price, 2) }}</p></a>
+             <a href="/{{ $book->specialbookid }}" ><img class=img-asdf src={{ $book->imageurl }}><p> {{ $book->bookname }}<br><strong>{{ 'Rp '.number_format($book->price, 2) }}</strong></p></a>
 </div>
              @endforeach
 </div>
