@@ -2,6 +2,7 @@
 
 namespace App\Filament\App\Pages;
 
+use App\Filament\App\Widgets\Ads1;
 use App\Filament\App\Widgets\Ads;
 use Filament\Pages\Page;
 
@@ -22,6 +23,7 @@ class Dashboard extends Page
     {
         return [
             Ads::class,
+            Ads1::class
         ];
     }
 }

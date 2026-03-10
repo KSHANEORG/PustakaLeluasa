@@ -4,6 +4,8 @@
             .asdf {
             display:grid;
             grid-template-columns:repeat(5,1fr);
+            gap: 1rem;
+            text-align: center;
 }
 
             @media (max-width:640px)    
@@ -17,6 +19,12 @@
             .lope {
                 display:block;
                 width:100%;
+                border: 2px solid #555;
+                background-color: #333333;
+                border-radius: 12px;
+                padding: 1rem;
+                align-items: center;
+                text-align: center;
             }
 
             .img-asdf {
@@ -24,17 +32,19 @@
                 width:auto;
                 object-fit:cover;
                 border-radius:12px;
+                                            margin-right: auto;
+            margin-left: auto;
             }
             </style>
-        <h1 style=font-size:30px> Trending Books </h1>
+        <h1 style=font-size:30px> All Books </h1>
         <?php
-        $books = DB::table('books')->orderByDesc('views')->paginate(5);
+        $books = DB::table('books')->orderByDesc('bookname')->get();
         ?>
         <div class=asdf>
         @foreach ($books as $book)
             
         <div class=lope>
-             <a href="/{{ $book->specialbookid }}" ><p><img class=img-asdf src={{ $book->imageurl }}> {{ $book->bookname }}</p></a>
+             <a href="/{{ $book->specialbookid }}" ><img class=img-asdf src={{ $book->imageurl }}><p> {{ $book->bookname }}<br>{{ 'Rp '.number_format($book->price, 2) }}</p></a>
 </div>
              @endforeach
 </div>
