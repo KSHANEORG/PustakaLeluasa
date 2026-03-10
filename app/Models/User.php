@@ -75,4 +75,9 @@ class User extends Authenticatable implements FilamentUser
     {
         return $this->belongsToMany(Book::class)->withTimestamps();
     }
+
+    public function interests(): BelongsToMany
+    {
+        return $this->belongsToMany(Category::class)->withTimestamps();
+    }
 }

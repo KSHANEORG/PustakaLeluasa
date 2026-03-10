@@ -13,7 +13,13 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         DB::table('categories')->insert([
-            'type' => 'fiksi',
+            'type' => 'fiksi'
+        ]);
+        DB::table('categories')->insert([
+            'type' => 'non-fiksi'
+        ]);
+        DB::table('categories')->insert([
+            'type' => 'religi'
         ]);
     }
 }

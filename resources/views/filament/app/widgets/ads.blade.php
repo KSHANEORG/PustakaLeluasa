@@ -26,7 +26,7 @@
                 border-radius:12px;
             }
             </style>
-        <h1 style=font-size:30px> Trending Books </h1>
+        <h1 style=font-size:30px> Buku Populer </h1>
         <?php
         $books = DB::table('books')->orderByDesc('views')->paginate(5);
         ?>

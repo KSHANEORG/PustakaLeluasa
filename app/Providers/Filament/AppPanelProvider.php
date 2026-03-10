@@ -34,6 +34,7 @@ class AppPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Red,
             ])
+            ->BrandLogo('/favicon.ico')
             ->discoverResources(in: app_path('Filament/App/Resources'), for: 'App\Filament\App\Resources')
             ->discoverPages(in: app_path('Filament/App/Pages'), for: 'App\Filament\App\Pages')
             ->pages([

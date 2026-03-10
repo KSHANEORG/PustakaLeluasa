@@ -10,6 +10,7 @@ use Filament\Pages\Page;
 class ForYou extends Page
 {
     protected static \BackedEnum|string|null $navigationIcon = 'heroicon-o-book-open';
+    protected static ?string $title = 'Pilihan Untukmu';
     protected string $view = 'filament.app.pages.for-you';
     public function getHeaderWidgetsColumns(): int | array
 {

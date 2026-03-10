@@ -58,12 +58,14 @@ href="{{ url('/app') }}"
             <!-- Menu Item 1 -->
             <?php $books = DB::table('books')->paginate(10); ?>
             @foreach ($books as $book)
+            <a href="/{{ $book->specialbookid }}" style="text-decoration: none; color: inherit;">
                  <div class="menu-card">
                 <img src="{{ $book->imageurl }}" alt="{{ $book->bookname }}" class="menu-img">
                 <h3 class="menu-item-title">{{ $book->bookname }}</h3>
                 <p class="menu-item-desc">{{ $book->description }}</p>
                 <span class="menu-item-price">{{ 'Rp.'.' '.number_format($book->price) }}</span>
             </div>
+</a>
             @endforeach
            
            

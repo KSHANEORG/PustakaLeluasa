@@ -12,7 +12,7 @@ Route::middleware('auth')->group(function () {
 
 		$request->user()->ownedBooks()->syncWithoutDetaching([$book->id]);
 
-		return back()->with('status', 'Book added to your collection.');
+		return back()->with('status', 'Buku ditambahkan ke koleksi anda.');
 	})->name('collection.add');
 
 	Route::get('/koleksi', function (Request $request) {

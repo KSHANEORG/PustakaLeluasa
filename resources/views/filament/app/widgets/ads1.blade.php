@@ -35,7 +35,7 @@
             margin-left: auto;
             }
             </style>
-        <h1 style=font-size:30px> All Books </h1>
+        <h1 style=font-size:30px> Semua Buku </h1>
         <?php
         $books = DB::table('books')->orderByDesc('bookname')->get();
         ?>

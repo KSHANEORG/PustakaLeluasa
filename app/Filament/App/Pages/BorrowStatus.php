@@ -8,4 +8,5 @@ class BorrowStatus extends Page
 {
     protected string $view = 'filament.app.pages.borrow-status';
     protected static \UnitEnum|string|null $navigationGroup = 'Manage';
-}
+protected static bool $shouldRegisterNavigation = false;
+    }
