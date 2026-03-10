@@ -7,7 +7,7 @@
         <div style=display:grid;grid-template-columns:repeat(5,1fr);>
         @foreach ($books as $book)
             
-             <a href="{{ $book->specialbookid }}"><p><img style=height:150px src={{ $book->imageurl }}> {{ $book->bookname }}</p></a>
+             <a href="/{{ $book->specialbookid }}"><p><img style=height:150px src={{ $book->imageurl }}> {{ $book->bookname }}</p></a>
         @endforeach
 </div>
     </x-filament::section>

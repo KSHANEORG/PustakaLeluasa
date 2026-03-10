@@ -15,5 +15,7 @@ class Book extends Model
         'imageurl',
         'specialbookid',
         'views',
+        'price',
+        'description',
     ];
 }

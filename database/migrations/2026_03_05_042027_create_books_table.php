@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('bookname');
             $table->string('imageurl')->nullable();
             $table->string('specialbookid')->unique();
-            $table->string('description')->nullable();
-            $table->string('price')->default('free');
             $table->string('views')->nullable();
+            $table->integer('price')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

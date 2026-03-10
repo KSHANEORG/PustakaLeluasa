@@ -56,14 +56,14 @@ href="{{ url('/app') }}"
 
                 <div class="menu-grid">
             <!-- Menu Item 1 -->
-            <?php $books = DB::table('books')->paginate(10); ?>
+            <?php $books = \App\Models\Book::paginate(10); ?>
             @foreach ($books as $book)
-                 <div class="menu-card">
-                <img src="{{ $book->imageurl }}" alt="{{ $book->bookname }}" class="menu-img">
-                <h3 class="menu-item-title">{{ $book->bookname }}</h3>
-                <p class="menu-item-desc">{{ $book->description }}</p>
-                <span class="menu-item-price">{{ 'Rp.'.' '.number_format($book->price) }}</span>
-            </div>
+                <a href="{{ route('book.details', ['specialbookid' => $book->specialbookid]) }}" class="menu-card">
+                    <img src="{{ asset($book->imageurl) }}" alt="{{ $book->bookname }}" class="menu-img">
+                    <h3 class="menu-item-title">{{ $book->bookname }}</h3>
+                    <p class="menu-item-desc">{{ Str::limit($book->description, 100) }}</p>
+                    <span class="menu-item-price">Rp {{ number_format($book->price) }}</span>
+                </a>
             @endforeach
            
            

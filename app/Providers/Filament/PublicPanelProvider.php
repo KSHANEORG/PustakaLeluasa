@@ -2,9 +2,6 @@
 
 namespace App\Providers\Filament;
 
-use App\Filament\App\Widgets\Ads;
-use Filament\Auth\Pages\Login;
-use Filament\Auth\Pages\Register;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -19,27 +16,23 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
-class AppPanelProvider extends PanelProvider
+class PublicPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->id('app')
-            ->path('app') // The URL will be /app
-            ->login(Login::class) // Enables Login
-            ->registration(Register::class) // Enables Registration
+            ->id('public')
+            ->path('') // Root path
             ->colors([
                 'primary' => Color::Red,
             ])
-            ->brandName('Pustaka Leluasa')
-            ->brandLogo(asset('favicon.ico'))
-            ->discoverResources(in: app_path('Filament/App/Resources'), for: 'App\Filament\App\Resources')
-            ->discoverPages(in: app_path('Filament/App/Pages'), for: 'App\Filament\App\Pages')
+            ->topNavigation() // Clean public look
+            ->discoverResources(in: app_path('Filament/Public/Resources'), for: 'App\Filament\Public\Resources')
+            ->discoverPages(in: app_path('Filament/Public/Pages'), for: 'App\Filament\Public\Pages')
             ->pages([
             ])
-            ->discoverWidgets(in: app_path('Filament/App/Widgets'), for: 'App\Filament\App\Widgets')
+            ->discoverWidgets(in: app_path('Filament/Public/Widgets'), for: 'App\Filament\Public\Widgets')
             ->widgets([
-                Ads::class,
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -53,7 +46,7 @@ class AppPanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->authMiddleware([
-                Authenticate::class,
+                // Authentication removed for public access
             ]);
     }
 }
