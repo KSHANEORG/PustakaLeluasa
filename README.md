@@ -11,3 +11,4 @@ Sebuah Proyek test Laravel.
 - php artisan key:generate
 - php artisan migrate
 - php artisan migrate --seed
+- npm run dev && php artisan serve
