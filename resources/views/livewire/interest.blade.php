@@ -23,7 +23,7 @@
         @if ($recommendedBooks)
             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px;">
                 @foreach ($recommendedBooks as $book)
-                <a href="" style="text-decoration: none; color: inherit;">
+                <a href="{{ route('z-bookdetails', $book['specialbookid']) }}" style="text-decoration: none; color: inherit;">
                     <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
                         @if ($book['imageurl'])
                             <img src="{{ $book['imageurl'] }}" alt="{{ $book['bookname'] }}" style="width: 100%; height: 200px; object-fit: cover;">
