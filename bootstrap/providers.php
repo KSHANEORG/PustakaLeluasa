@@ -5,4 +5,6 @@ return [
     App\Providers\Filament\AdminPanelProvider::class,
     App\Providers\Filament\AppPanelProvider::class,
     App\Providers\Filament\LoginPanelProvider::class,
+    App\Providers\Filament\PublicPanelProvider::class,
+    App\Providers\FortifyServiceProvider::class,
 ];

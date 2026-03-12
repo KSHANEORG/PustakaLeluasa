@@ -3,16 +3,14 @@
 namespace App\Filament\App\Pages;
 
 use App\Filament\App\Widgets\Ads1;
-use App\Filament\App\Widgets\Ads;
+use App\Filament\App\Widgets\Type;
 use Filament\Pages\Page;
 
-class Dashboard extends Page
+class XCari extends Page
 {
-    protected static \BackedEnum|string|null $navigationIcon = 'heroicon-o-shopping-cart';
-
-    protected static ?string $title = 'Temukan';
-
-    protected string $view = 'filament.app.pages.dashboard';
+    protected string $view = 'filament.app.pages.x-cari';
+    protected static ?string $title = 'Cari Buku';
+    protected static \BackedEnum|string|null $navigationIcon = 'heroicon-o-magnifying-glass';
 
     public function getHeaderWidgetsColumns(): int | array
 {
@@ -22,8 +20,10 @@ class Dashboard extends Page
     public function getHeaderWidgets(): array
     {
         return [
-            Ads::class,
+            Type::class,
             Ads1::class
         ];
     }
 }
+
+

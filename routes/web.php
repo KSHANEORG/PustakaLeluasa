@@ -54,14 +54,14 @@ Route::middleware('auth')->group(function () {
 	})->name('book.rate');
 });
 
-Route::get('/{specialbookid}', function (Request $request, string $specialbookid) {
-	$book = Book::where('specialbookid', $specialbookid)->firstOrFail();
-	$averageRating = (float) ($book->ratings()->avg('rating') ?? 0);
-	$ratingsCount = $book->ratings()->count();
-	$userRating = $request->user()
-		?->bookRatings()
-		->where('book_id', $book->id)
-		->value('rating');
-
-	return view('filament.app.pages.z-bookdetails', compact('book', 'averageRating', 'ratingsCount', 'userRating'));
+Route::get('/{specialbookid}', function (string $specialbookid) {
+	return redirect("/app/book/{$specialbookid}");
 })->name('z-bookdetails');
+
+Route::post('/app/wallet/topup', function (Request $request) {
+	$amount = $request->validate([
+		'amount' => ['required', 'min:10000', 'max:1000000'],
+	])['amount'];
+
+	return back()->with('status', 'Permintaan top-up sebesar Rp ' . number_format($amount, 0, ',', '.') . ' diterima (fitur masih dalam pengembangan).');
+})->name('top-up');

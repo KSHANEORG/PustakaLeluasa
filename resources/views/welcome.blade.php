@@ -24,7 +24,7 @@
                         </a>
                     @else
                         <a
-                            href="{{ url('/app') }}"
+                            href="{{ url('/app/login') }}"
                             class="Lnav"
                         >
                             Log in
@@ -32,7 +32,7 @@
 
 <span class="Lnav">|</span>
                             <a
-href="{{ url('/app') }}"
+href="{{ url('/app/register') }}"
                                 class="Lnav"
                                 > Register
                             </a>

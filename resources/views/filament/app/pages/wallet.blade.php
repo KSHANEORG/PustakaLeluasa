@@ -104,14 +104,19 @@
 }
 
     </style>
-
+<?php $amount = -100000; ?>
 <x-filament-panels::page>
-    <p style=font-size:60px;color:red>Rp. -100,00</p>
-    <button class="button">
-  <span class="label">+ Isi Saldo</span>
-  <span class="gradient-container">
-    <span class="gradient"></span>
-  </span>
+    <p style=font-size:60px;color:red>Rp. <?php echo number_format($amount, 2); ?></p>
+    <form action="{{ route('top-up') }}" method="POST">
+        @csrf
+        <input type="hidden" name="amount" value="-{{ $amount }}">
+        <button class="button" type="submit">
+            <span class="label">+ Isi Saldo</span>
+            <span class="gradient-container">
+                <span class="gradient"></span>
+            </span>
+        </button>
+    </form>
 </button>
 
 </x-filament-panels::page>
