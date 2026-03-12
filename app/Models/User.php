@@ -80,4 +80,9 @@ class User extends Authenticatable implements FilamentUser
     {
         return $this->belongsToMany(Category::class)->withTimestamps();
     }
+
+    public function bookRatings(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(BookRating::class);
+    }
 }

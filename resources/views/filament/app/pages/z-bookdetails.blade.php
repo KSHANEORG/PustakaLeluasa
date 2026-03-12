@@ -39,6 +39,7 @@
             <h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem;">{{ $book->bookname }}</h1>
             <p style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Rp {{ number_format($book->price) }}</p>
                         <p style="font-size: 1rem; margin-bottom: 1rem;">Views: {{ number_format($book->views) }}</p>
+                        <p style="font-size: 1rem; margin-bottom: 1rem;">Penilaian: {{ number_format($averageRating, 1) }} ({{ $ratingsCount }} ulasan)</p>
             <p style="line-height: 1.7;">{{ $book->description }}</p>
             <a style=color:red href="{{ "https://wa.me/6285379426392?text=I'm%20interested%20in%20your%20BOOK%20for%20sale%20".$book->bookname }}" target="_blank">Hubungi</a>
 {{-- the wonders of comments --}}
@@ -54,7 +55,31 @@
   <span class="tooltip">Cek koleksi di <a href="/app/library" style="color: #fff; text-decoration: underline;">Koleksi Saya</a></span>
 </div>
 <a href="{{ $book->bookurl }}" target="_blank" id="bottone5">Baca</a>
-            @else
+<form method="POST" action="{{ route('collection.remove', ['specialbookid' => $book->specialbookid]) }}" style="margin-top: 0.75rem;">
+    @csrf
+    <button class=btn-17 type="submit">Hapus dari Koleksi</button>
+</form>
+
+<form method="POST" action="{{ route('book.rate', ['specialbookid' => $book->specialbookid]) }}" style="margin-top: 1rem;">
+                @csrf
+                <div class="rating">
+                    @for ($value = 5; $value >= 1; $value--)
+                        <input
+                            value="{{ $value }}"
+                            name="rating"
+                            id="star{{ $value }}"
+                            type="radio"
+                            {{ (int) $userRating === $value ? 'checked' : '' }}
+                        >
+                        <label for="star{{ $value }}"></label>
+                    @endfor
+                </div>
+                <div style="clear: both; margin-top: 0.5rem;">
+                    <button class="btn-17" type="submit">{{ $userRating ? 'Update Rating' : 'Kirim Rating' }}</button>
+                </div>
+            </form>
+
+@else
             {{-- i still dont quite get how this works, but it seems to work fine, so yeah. --}}
                 <form method="POST" action="{{ route('collection.add', ['specialbookid' => $book->specialbookid]) }}" style="margin-top: 0.75rem;">
                     @csrf
