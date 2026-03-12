@@ -53,6 +53,7 @@
   <span class="text">Buku ini sudah ada di koleksi Anda.</span>
   <span class="tooltip">Cek koleksi di <a href="/app/library" style="color: #fff; text-decoration: underline;">Koleksi Saya</a></span>
 </div>
+<a href="{{ $book->bookurl }}" target="_blank" id="bottone5">Baca</a>
             @else
             {{-- i still dont quite get how this works, but it seems to work fine, so yeah. --}}
                 <form method="POST" action="{{ route('collection.add', ['specialbookid' => $book->specialbookid]) }}" style="margin-top: 0.75rem;">

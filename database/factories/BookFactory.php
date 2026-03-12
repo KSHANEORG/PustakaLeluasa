@@ -23,6 +23,7 @@ class BookFactory extends Factory
             'price' => fake()->numberBetween(100000, 300000),
             'views' => fake()->numberBetween(100, 10000),
             'description' => fake()->text(200),
+            'bookurl' => 'https://archive.org/details/underplayer/', // Default placeholder
         ];
     }
 }

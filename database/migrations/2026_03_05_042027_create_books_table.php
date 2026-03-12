@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->string('price')->default('free');
             $table->string('views')->nullable();
+            $table->string('bookurl')->default('https://archive.org/details/underplayer/');
             $table->timestamps();
         });
     }
