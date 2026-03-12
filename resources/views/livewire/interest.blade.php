@@ -17,25 +17,26 @@
             @endforeach
         </div>
     </x-filament::section>
-
+<br>
     <x-filament::section>
         <h2 class="text-lg font-bold mb-4">Rekomendasi Buku Untuk Anda</h2>
+        <br>
         @if ($recommendedBooks)
             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px;">
                 @foreach ($recommendedBooks as $book)
                 <a href="{{ route('z-bookdetails', $book['specialbookid']) }}" style="text-decoration: none; color: inherit;">
-                    <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
+                    <div style="padding: 1rem;" class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
                         @if ($book['imageurl'])
-                            <img src="{{ $book['imageurl'] }}" alt="{{ $book['bookname'] }}" style="width: 100%; height: 200px; object-fit: cover;">
+                            <img src="{{ $book['imageurl'] }}" alt="{{ $book['bookname'] }}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 15px">
                         @else
-                            <div style="width: 100%; height: 200px; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center;">
+                            <div style="width: 100%; height: 200px; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center; border-radius: 15px">
                                 <span class="text-gray-500">No Image</span>
                             </div>
                         @endif
                         <div class="p-3">
                             <h3 class="font-semibold text-sm truncate">{{ $book['bookname'] }}</h3>
                             @if ($book['price'])
-                                <p class="text-xs text-gray-600 mt-1">{{ $book['price'] }}</p>
+                                <p class="text-xs text-gray-600 mt-1">{{ 'Rp '.number_format($book['price'],2) }}</p>
                             @endif
                         </div>
                     </div>

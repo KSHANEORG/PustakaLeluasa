@@ -2,7 +2,7 @@
 
 namespace App\Filament\App\Pages;
 
-use App\Livewire\DebugInfo;
+// use App\Livewire\DebugInfo;
 use App\Livewire\Interest;
 use BackedEnum;
 use Filament\Pages\Page;
@@ -20,7 +20,7 @@ class ForYou extends Page
     public function getHeaderWidgets(): array
     {
         return [
-            DebugInfo::class,
+           // DebugInfo::class,
             Interest::class,
         ];
     }

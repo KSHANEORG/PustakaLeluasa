@@ -16,6 +16,10 @@ class BookSeeder extends Seeder
         $books = Book::factory(20)->create();
         $categories = Category::all();
 
+        if ($categories->isEmpty()) {
+            return;
+        }
+
         foreach ($books as $book) {
             // Assign 1-3 random categories to each book
             $randomCategories = $categories->random(rand(1, min(3, $categories->count())));

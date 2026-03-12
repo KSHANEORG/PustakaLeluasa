@@ -22,7 +22,7 @@ class BookFactory extends Factory
             'specialbookid' => fake()->unique()->slug(),
             'price' => fake()->numberBetween(100000, 300000),
             'views' => fake()->numberBetween(100, 10000),
-            'description' => fake()->paragraph(),
+            'description' => fake()->text(200),
         ];
     }
 }
