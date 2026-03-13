@@ -23,7 +23,7 @@ class BookFactory extends Factory
             'price' => fake()->numberBetween(100000, 300000),
             'views' => fake()->numberBetween(100, 10000),
             'description' => fake()->text(200),
-            'bookurl' => 'https://archive.org/details/underplayer/', // Default placeholder
+            'bookurl' => 'https://tabloidsastra.wordpress.com/wp-content/uploads/2015/02/cintaku-di-kampus-biru-_-ashadi-siregar.pdf', // Default placeholder
         ];
     }
 }

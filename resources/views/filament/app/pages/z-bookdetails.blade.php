@@ -1,6 +1,7 @@
 <style>
     /* From Uiverse.io by css.btn-17s-io */ 
 .btn-17 {
+  background-color: #fff;
   --color: #000000;
   font-family: inherit;
   display: inline-block;
@@ -208,13 +209,15 @@
 {{-- wow commenting is so fun --}}
         <div>
             <h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem;">{{ $book->bookname }}</h1>
+           @if (!auth()->user()->OwnedBooks->contains($book->id))
             <p style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Rp {{ number_format($book->price) }}</p>
-                        <p style="font-size: 1rem; margin-bottom: 1rem;">Views: {{ number_format($book->views) }}</p>
+            @endif           
+            <p style="font-size: 1rem; margin-bottom: 1rem;">Views: {{ number_format($book->views) }}</p>
                         <p style="font-size: 1rem; margin-bottom: 1rem;">Penilaian: {{ number_format($averageRating, 1) }} ({{ $ratingsCount }} ulasan)</p>
             
                         <p style="line-height: 1.7;">{{ $book->description }}</p>
                         @if (auth()->user()->OwnedBooks->contains($book->id))
-        <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;">
+        <div style="margin-left: 20px; display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;">
             <a href="{{ $book->bookurl }}" target="_blank" class="btn-17">Baca</a>
             <form style="display:inline" method="POST" action="{{ route('book.rate', ['specialbookid' => $book->specialbookid]) }}">
                 @csrf

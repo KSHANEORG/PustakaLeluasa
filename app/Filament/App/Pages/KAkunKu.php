@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class KAkunKu extends Page
 {
     protected string $view = 'filament.app.pages.k-akun-ku';
+        protected static \BackedEnum|string|null $navigationIcon = 'heroicon-o-user';
     protected static ?string $title = 'Akun Ku';
     protected static \UnitEnum|string|null $navigationGroup = 'Akun';
 

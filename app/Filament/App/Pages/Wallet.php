@@ -6,6 +6,7 @@ use Filament\Pages\Page;
 
 class Wallet extends Page
 {
+        protected static \BackedEnum|string|null $navigationIcon = 'heroicon-o-credit-card';
     protected string $view = 'filament.app.pages.wallet';
     protected static \UnitEnum|string|null $navigationGroup = 'Akun';
 }
